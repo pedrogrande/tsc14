@@ -1,4 +1,5 @@
 ActiveAdmin.register BusinessProfile do
+  permit_params :owner, :name, :description, :twitter, :facebook, :linkedin, :url, :google, :address, :building, :city, :state, :postcode, :country, :logo, :image, :email, :phone, :latitude, :longitude, :slug
 
   
   # See permitted parameters documentation:
