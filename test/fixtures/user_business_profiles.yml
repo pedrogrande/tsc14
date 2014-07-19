@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  business_profile_id: 
+  user_id: 
+  is_owner: false
+  position: MyString
+
+two:
+  business_profile_id: 
+  user_id: 
+  is_owner: false
+  position: MyString
