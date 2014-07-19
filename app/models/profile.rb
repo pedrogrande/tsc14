@@ -3,4 +3,5 @@ class Profile < ActiveRecord::Base
   validates_formatting_of :email, using: :email
   validates_formatting_of :url, using: :url
   validates_formatting_of :facebook, using: :url
+  validates_formatting_of :linkedin, using: :url
 end
