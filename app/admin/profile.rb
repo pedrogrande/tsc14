@@ -1,4 +1,5 @@
 ActiveAdmin.register Profile do
+  permit_params :tagline, :about, :email, :phone, :url, :twitter, :facebook, :linkedin, :google, :image, :slug, :name, :mentor, :github
 
   
   # See permitted parameters documentation:
