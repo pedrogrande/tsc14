@@ -1,114 +1,64 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = BusinessProfile -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => BusinessProfile %></h1>
+</div>
 
-<p>
-  <strong>Owner:</strong>
-  <%= @business_profile.owner %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:owner) %></dt>
+      <dd><pre class="prettyprint"><%= @business_profile.owner %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+      <dd><pre class="prettyprint"><%= @business_profile.name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:description) %></dt>
+      <dd><pre class="prettyprint"><%= @business_profile.description %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:twitter) %></dt>
+      <dd><pre class="prettyprint"><%= @business_profile.twitter %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:facebook) %></dt>
+      <dd><pre class="prettyprint"><%= @business_profile.facebook %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:linkedin) %></dt>
+      <dd><pre class="prettyprint"><%= @business_profile.linkedin %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:url) %></dt>
+      <dd><pre class="prettyprint"><%= @business_profile.url %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:google) %></dt>
+      <dd><pre class="prettyprint"><%= @business_profile.google %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:address) %></dt>
+      <dd><pre class="prettyprint"><%= @business_profile.address %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:building) %></dt>
+      <dd><pre class="prettyprint"><%= @business_profile.building %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:city) %></dt>
+      <dd><pre class="prettyprint"><%= @business_profile.city %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:state) %></dt>
+      <dd><pre class="prettyprint"><%= @business_profile.state %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:postcode) %></dt>
+      <dd><pre class="prettyprint"><%= @business_profile.postcode %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:country) %></dt>
+      <dd><pre class="prettyprint"><%= @business_profile.country %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:logo) %></dt>
+      <dd><pre class="prettyprint"><%= @business_profile.logo %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:image) %></dt>
+      <dd><pre class="prettyprint"><%= @business_profile.image %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:email) %></dt>
+      <dd><pre class="prettyprint"><%= @business_profile.email %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:phone) %></dt>
+      <dd><pre class="prettyprint"><%= @business_profile.phone %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:latitude) %></dt>
+      <dd><pre class="prettyprint"><%= @business_profile.latitude %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:longitude) %></dt>
+      <dd><pre class="prettyprint"><%= @business_profile.longitude %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:slug) %></dt>
+      <dd><pre class="prettyprint"><%= @business_profile.slug %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @business_profile.name %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              business_profiles_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_business_profile_path(@business_profile), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              business_profile_path(@business_profile),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @business_profile.description %>
-</p>
-
-<p>
-  <strong>Twitter:</strong>
-  <%= @business_profile.twitter %>
-</p>
-
-<p>
-  <strong>Facebook:</strong>
-  <%= @business_profile.facebook %>
-</p>
-
-<p>
-  <strong>Linkedin:</strong>
-  <%= @business_profile.linkedin %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @business_profile.url %>
-</p>
-
-<p>
-  <strong>Google:</strong>
-  <%= @business_profile.google %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @business_profile.address %>
-</p>
-
-<p>
-  <strong>Building:</strong>
-  <%= @business_profile.building %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @business_profile.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @business_profile.state %>
-</p>
-
-<p>
-  <strong>Postcode:</strong>
-  <%= @business_profile.postcode %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @business_profile.country %>
-</p>
-
-<p>
-  <strong>Logo:</strong>
-  <%= @business_profile.logo %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @business_profile.image %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @business_profile.email %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @business_profile.phone %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @business_profile.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @business_profile.longitude %>
-</p>
-
-<p>
-  <strong>Slug:</strong>
-  <%= @business_profile.slug %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @business_profile.category %>
-</p>
-
-<%= link_to 'Edit', edit_business_profile_path(@business_profile) %> |
-<%= link_to 'Back', business_profiles_path %>
