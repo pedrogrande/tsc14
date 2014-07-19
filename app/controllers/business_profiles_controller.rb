@@ -1,5 +1,5 @@
 class BusinessProfilesController < ApplicationController
-  before_action :set_business_profile, only: [:show, :edit, :update, :destroy]
+  before_action :set_business_profile, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /business_profiles
   # GET /business_profiles.json
