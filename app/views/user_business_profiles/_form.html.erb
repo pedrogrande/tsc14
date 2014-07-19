@@ -1,14 +1,22 @@
-<%= simple_form_for(@user_business_profile) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :business_profile %>
-    <%= f.association :user %>
-    <%= f.input :is_owner %>
-    <%= f.input :position %>
+<%= form_for @user_business_profile, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :is_owner, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :is_owner, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :position, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :position, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  user_business_profiles_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

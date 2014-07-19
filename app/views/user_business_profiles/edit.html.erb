@@ -1,6 +1,5 @@
-<h1>Editing user_business_profile</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @user_business_profile %> |
-<%= link_to 'Back', user_business_profiles_path %>
+<%- model_class = UserBusinessProfile -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => UserBusinessProfile %></h1>
+</div>
+<%= render :partial => 'form' %>
