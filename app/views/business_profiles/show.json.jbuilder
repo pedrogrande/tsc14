@@ -1,0 +1,1 @@
+json.extract! @business_profile, :id, :owner, :name, :description, :twitter, :facebook, :linkedin, :url, :google, :address, :building, :city, :state, :postcode, :country, :logo, :image, :email, :phone, :latitude, :longitude, :slug, :category_id, :created_at, :updated_at
