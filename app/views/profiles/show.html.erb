@@ -1,79 +1,50 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Profile -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Profile %></h1>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @profile.user %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:tagline) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.tagline %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:about) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.about %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:email) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.email %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:phone) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.phone %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:url) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.url %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:twitter) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.twitter %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:facebook) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.facebook %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:linkedin) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.linkedin %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:google) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.google %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:image) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.image %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:slug) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.slug %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:mentor) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.mentor %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:github) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.github %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Tagline:</strong>
-  <%= @profile.tagline %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              profiles_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_profile_path(@profile), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              profile_path(@profile),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>About:</strong>
-  <%= @profile.about %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @profile.email %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @profile.phone %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @profile.url %>
-</p>
-
-<p>
-  <strong>Twitter:</strong>
-  <%= @profile.twitter %>
-</p>
-
-<p>
-  <strong>Facebook:</strong>
-  <%= @profile.facebook %>
-</p>
-
-<p>
-  <strong>Linkedin:</strong>
-  <%= @profile.linkedin %>
-</p>
-
-<p>
-  <strong>Google:</strong>
-  <%= @profile.google %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @profile.image %>
-</p>
-
-<p>
-  <strong>Slug:</strong>
-  <%= @profile.slug %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @profile.name %>
-</p>
-
-<p>
-  <strong>Mentor:</strong>
-  <%= @profile.mentor %>
-</p>
-
-<p>
-  <strong>Github:</strong>
-  <%= @profile.github %>
-</p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
