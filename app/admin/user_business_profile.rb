@@ -1,4 +1,5 @@
 ActiveAdmin.register UserBusinessProfile do
+  permit_params :is_owner, :position
 
   
   # See permitted parameters documentation:
