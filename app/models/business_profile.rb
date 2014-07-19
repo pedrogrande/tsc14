@@ -5,4 +5,5 @@ class BusinessProfile < ActiveRecord::Base
   validates_formatting_of :facebook, using: :url
   validates_formatting_of :linkedin, using: :url
   validates_formatting_of :url, using: :url
+  validates_formatting_of :google, using: :url
 end
